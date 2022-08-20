@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FED98B1528B186840045D879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1428B186840045D879 /* AppDelegate.swift */; };
+		FED98B1728B186840045D879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1628B186840045D879 /* SceneDelegate.swift */; };
+		FED98B1928B186840045D879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1828B186840045D879 /* ViewController.swift */; };
+		FED98B1C28B186840045D879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED98B1A28B186840045D879 /* Main.storyboard */; };
+		FED98B1E28B186890045D879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED98B1D28B186890045D879 /* Assets.xcassets */; };
+		FED98B2128B186890045D879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED98B1F28B186890045D879 /* LaunchScreen.storyboard */; };
+		FED98B2C28B186890045D879 /* MarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B2B28B186890045D879 /* MarsTests.swift */; };
+		FED98B3628B186890045D879 /* MarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B3528B186890045D879 /* MarsUITests.swift */; };
+		FED98B3828B186890045D879 /* MarsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B3728B186890045D879 /* MarsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FED98B2828B186890045D879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED98B0928B186840045D879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED98B1028B186840045D879;
+			remoteInfo = Mars;
+		};
+		FED98B3228B186890045D879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FED98B0928B186840045D879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FED98B1028B186840045D879;
+			remoteInfo = Mars;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FED98B1128B186840045D879 /* Mars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED98B1428B186840045D879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FED98B1628B186840045D879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FED98B1828B186840045D879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FED98B1B28B186840045D879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FED98B1D28B186890045D879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FED98B2028B186890045D879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FED98B2228B186890045D879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED98B2728B186890045D879 /* MarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED98B2B28B186890045D879 /* MarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsTests.swift; sourceTree = "<group>"; };
+		FED98B3128B186890045D879 /* MarsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED98B3528B186890045D879 /* MarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsUITests.swift; sourceTree = "<group>"; };
+		FED98B3728B186890045D879 /* MarsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FED98B0E28B186840045D879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2428B186890045D879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2E28B186890045D879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FED98B0828B186840045D879 = {
+			isa = PBXGroup;
+			children = (
+				FED98B1328B186840045D879 /* Mars */,
+				FED98B2A28B186890045D879 /* MarsTests */,
+				FED98B3428B186890045D879 /* MarsUITests */,
+				FED98B1228B186840045D879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FED98B1228B186840045D879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FED98B1128B186840045D879 /* Mars.app */,
+				FED98B2728B186890045D879 /* MarsTests.xctest */,
+				FED98B3128B186890045D879 /* MarsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FED98B1328B186840045D879 /* Mars */ = {
+			isa = PBXGroup;
+			children = (
+				FED98B1428B186840045D879 /* AppDelegate.swift */,
+				FED98B1628B186840045D879 /* SceneDelegate.swift */,
+				FED98B1828B186840045D879 /* ViewController.swift */,
+				FED98B1A28B186840045D879 /* Main.storyboard */,
+				FED98B1D28B186890045D879 /* Assets.xcassets */,
+				FED98B1F28B186890045D879 /* LaunchScreen.storyboard */,
+				FED98B2228B186890045D879 /* Info.plist */,
+			);
+			path = Mars;
+			sourceTree = "<group>";
+		};
+		FED98B2A28B186890045D879 /* MarsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FED98B2B28B186890045D879 /* MarsTests.swift */,
+			);
+			path = MarsTests;
+			sourceTree = "<group>";
+		};
+		FED98B3428B186890045D879 /* MarsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FED98B3528B186890045D879 /* MarsUITests.swift */,
+				FED98B3728B186890045D879 /* MarsUITestsLaunchTests.swift */,
+			);
+			path = MarsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FED98B1028B186840045D879 /* Mars */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED98B3B28B186890045D879 /* Build configuration list for PBXNativeTarget "Mars" */;
+			buildPhases = (
+				FED98B0D28B186840045D879 /* Sources */,
+				FED98B0E28B186840045D879 /* Frameworks */,
+				FED98B0F28B186840045D879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mars;
+			productName = Mars;
+			productReference = FED98B1128B186840045D879 /* Mars.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FED98B2628B186890045D879 /* MarsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED98B3E28B186890045D879 /* Build configuration list for PBXNativeTarget "MarsTests" */;
+			buildPhases = (
+				FED98B2328B186890045D879 /* Sources */,
+				FED98B2428B186890045D879 /* Frameworks */,
+				FED98B2528B186890045D879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED98B2928B186890045D879 /* PBXTargetDependency */,
+			);
+			name = MarsTests;
+			productName = MarsTests;
+			productReference = FED98B2728B186890045D879 /* MarsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FED98B3028B186890045D879 /* MarsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FED98B4128B186890045D879 /* Build configuration list for PBXNativeTarget "MarsUITests" */;
+			buildPhases = (
+				FED98B2D28B186890045D879 /* Sources */,
+				FED98B2E28B186890045D879 /* Frameworks */,
+				FED98B2F28B186890045D879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FED98B3328B186890045D879 /* PBXTargetDependency */,
+			);
+			name = MarsUITests;
+			productName = MarsUITests;
+			productReference = FED98B3128B186890045D879 /* MarsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FED98B0928B186840045D879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FED98B1028B186840045D879 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					FED98B2628B186890045D879 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FED98B1028B186840045D879;
+					};
+					FED98B3028B186890045D879 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FED98B1028B186840045D879;
+					};
+				};
+			};
+			buildConfigurationList = FED98B0C28B186840045D879 /* Build configuration list for PBXProject "Mars" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FED98B0828B186840045D879;
+			productRefGroup = FED98B1228B186840045D879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FED98B1028B186840045D879 /* Mars */,
+				FED98B2628B186890045D879 /* MarsTests */,
+				FED98B3028B186890045D879 /* MarsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FED98B0F28B186840045D879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED98B2128B186890045D879 /* LaunchScreen.storyboard in Resources */,
+				FED98B1E28B186890045D879 /* Assets.xcassets in Resources */,
+				FED98B1C28B186840045D879 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2528B186890045D879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2F28B186890045D879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FED98B0D28B186840045D879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED98B1928B186840045D879 /* ViewController.swift in Sources */,
+				FED98B1528B186840045D879 /* AppDelegate.swift in Sources */,
+				FED98B1728B186840045D879 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2328B186890045D879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED98B2C28B186890045D879 /* MarsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED98B2D28B186890045D879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED98B3628B186890045D879 /* MarsUITests.swift in Sources */,
+				FED98B3828B186890045D879 /* MarsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FED98B2928B186890045D879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED98B1028B186840045D879 /* Mars */;
+			targetProxy = FED98B2828B186890045D879 /* PBXContainerItemProxy */;
+		};
+		FED98B3328B186890045D879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FED98B1028B186840045D879 /* Mars */;
+			targetProxy = FED98B3228B186890045D879 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FED98B1A28B186840045D879 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FED98B1B28B186840045D879 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FED98B1F28B186890045D879 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FED98B2028B186890045D879 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FED98B3928B186890045D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FED98B3A28B186890045D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FED98B3C28B186890045D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mars/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.Mars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FED98B3D28B186890045D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mars/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.Mars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FED98B3F28B186890045D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.MarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mars.app/Mars";
+			};
+			name = Debug;
+		};
+		FED98B4028B186890045D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.MarsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mars.app/Mars";
+			};
+			name = Release;
+		};
+		FED98B4228B186890045D879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.MarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mars;
+			};
+			name = Debug;
+		};
+		FED98B4328B186890045D879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DVX5N2U74F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = robson.MarsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mars;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FED98B0C28B186840045D879 /* Build configuration list for PBXProject "Mars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED98B3928B186890045D879 /* Debug */,
+				FED98B3A28B186890045D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED98B3B28B186890045D879 /* Build configuration list for PBXNativeTarget "Mars" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED98B3C28B186890045D879 /* Debug */,
+				FED98B3D28B186890045D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED98B3E28B186890045D879 /* Build configuration list for PBXNativeTarget "MarsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED98B3F28B186890045D879 /* Debug */,
+				FED98B4028B186890045D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FED98B4128B186890045D879 /* Build configuration list for PBXNativeTarget "MarsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FED98B4228B186890045D879 /* Debug */,
+				FED98B4328B186890045D879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FED98B0928B186840045D879 /* Project object */;
+}
