@@ -47,6 +47,7 @@ class StartViewController: UIViewController {
     func loadConstraint () {
         let logoImageConstraint = [
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: UIScreenSizes.width*0.9)
         ]
         
         let startButtonConstraint = [
