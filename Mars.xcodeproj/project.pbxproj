@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE2B072C28B19D7C004DA178 /* ViewBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B072B28B19D7C004DA178 /* ViewBackgroundColor.swift */; };
-		FE2B073128B1C1B5004DA178 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B073028B1C1B5004DA178 /* Sizes.swift */; };
+		FE03CBAC28B7A2C000703B4E /* ImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBAB28B7A2C000703B4E /* ImagesTableViewCell.swift */; };
+		FE03CBAE28B7B07700703B4E /* CellTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */; };
+		FE03CBB328B7E3CA00703B4E /* ViewCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBB228B7E3CA00703B4E /* ViewCodeConfiguration.swift */; };
+		FE03CBB828B8147800703B4E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBB728B8147800703B4E /* WeatherService.swift */; };
+		FE2B072C28B19D7C004DA178 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B072B28B19D7C004DA178 /* CustomColors.swift */; };
 		FE2B073428B1C652004DA178 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B073328B1C652004DA178 /* ImagesViewController.swift */; };
+		FEC1915C28B5051E00D29D72 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1915B28B5051E00D29D72 /* WeatherTableViewCell.swift */; };
+		FEC1916228B50D9900D29D72 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916128B50D9900D29D72 /* WeatherCollectionViewCell.swift */; };
+		FEC1916828B5481500D29D72 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916728B5481500D29D72 /* AsyncImage.swift */; };
+		FEC1916A28B6525000D29D72 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916928B6525000D29D72 /* WeatherModel.swift */; };
+		FEC1916C28B799A300D29D72 /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916B28B799A300D29D72 /* ImagesService.swift */; };
+		FEC1916E28B79D9900D29D72 /* RoverImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916D28B79D9900D29D72 /* RoverImagesModel.swift */; };
 		FED98B1528B186840045D879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1428B186840045D879 /* AppDelegate.swift */; };
 		FED98B1728B186840045D879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1628B186840045D879 /* SceneDelegate.swift */; };
 		FED98B1928B186840045D879 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1828B186840045D879 /* StartViewController.swift */; };
@@ -38,9 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE2B072B28B19D7C004DA178 /* ViewBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBackgroundColor.swift; sourceTree = "<group>"; };
-		FE2B073028B1C1B5004DA178 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		FE03CBAB28B7A2C000703B4E /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
+		FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeModel.swift; sourceTree = "<group>"; };
+		FE03CBB228B7E3CA00703B4E /* ViewCodeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeConfiguration.swift; sourceTree = "<group>"; };
+		FE03CBB728B8147800703B4E /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		FE2B072B28B19D7C004DA178 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		FE2B073328B1C652004DA178 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		FEC1915B28B5051E00D29D72 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		FEC1916128B50D9900D29D72 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		FEC1916728B5481500D29D72 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		FEC1916928B6525000D29D72 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		FEC1916B28B799A300D29D72 /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
+		FEC1916D28B79D9900D29D72 /* RoverImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImagesModel.swift; sourceTree = "<group>"; };
 		FED98B1128B186840045D879 /* Mars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED98B1428B186840045D879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FED98B1628B186840045D879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,28 +98,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE2B072D28B19D85004DA178 /* Extensions */ = {
+		FE03CBAA28B7A24B00703B4E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FE2B072E28B19DF5004DA178 /* UIColorExtension */,
+				FE03CBAB28B7A2C000703B4E /* ImagesTableViewCell.swift */,
 			);
-			path = Extensions;
+			path = Images;
 			sourceTree = "<group>";
 		};
-		FE2B072E28B19DF5004DA178 /* UIColorExtension */ = {
+		FE03CBB128B7E3A300703B4E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				FE2B072B28B19D7C004DA178 /* ViewBackgroundColor.swift */,
+				FE03CBB228B7E3CA00703B4E /* ViewCodeConfiguration.swift */,
 			);
-			path = UIColorExtension;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
-		FE2B072F28B1C19E004DA178 /* Components */ = {
+		FE03CBB428B7E50A00703B4E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE2B073028B1C1B5004DA178 /* Sizes.swift */,
+				FE03CBB528B7E52400703B4E /* Start */,
+				FE03CBB628B7E53F00703B4E /* Explore */,
 			);
-			path = Components;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE03CBB528B7E52400703B4E /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				FED98B1828B186840045D879 /* StartViewController.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		FE03CBB628B7E53F00703B4E /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B073328B1C652004DA178 /* ImagesViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		FE2B072D28B19D85004DA178 /* UIViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1916628B547EE00D29D72 /* UIImage */,
+				FE2B072E28B19DF5004DA178 /* UIColor */,
+			);
+			path = UIViewExtensions;
+			sourceTree = "<group>";
+		};
+		FE2B072E28B19DF5004DA178 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B072B28B19D7C004DA178 /* CustomColors.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		FEC1915F28B50A6600D29D72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1916528B510E000D29D72 /* Weather */,
+				FE03CBAA28B7A24B00703B4E /* Images */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FEC1916528B510E000D29D72 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1915B28B5051E00D29D72 /* WeatherTableViewCell.swift */,
+				FEC1916128B50D9900D29D72 /* WeatherCollectionViewCell.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FEC1916628B547EE00D29D72 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1916728B5481500D29D72 /* AsyncImage.swift */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 		FED98B0828B186840045D879 = {
@@ -155,12 +233,12 @@
 		FED98B4428B188A00045D879 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FE2B072F28B1C19E004DA178 /* Components */,
 				FED98B4828B189720045D879 /* Model */,
-				FED98B4928B189800045D879 /* ViewModel */,
-				FED98B4A28B189920045D879 /* View */,
+				FEC1915F28B50A6600D29D72 /* Views */,
+				FE03CBB428B7E50A00703B4E /* Controllers */,
 				FED98B4E28B18A240045D879 /* Services */,
-				FE2B072D28B19D85004DA178 /* Extensions */,
+				FE2B072D28B19D85004DA178 /* UIViewExtensions */,
+				FE03CBB128B7E3A300703B4E /* Protocols */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -186,45 +264,18 @@
 		FED98B4828B189720045D879 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEC1916928B6525000D29D72 /* WeatherModel.swift */,
+				FEC1916D28B79D9900D29D72 /* RoverImagesModel.swift */,
+				FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FED98B4928B189800045D879 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FED98B4A28B189920045D879 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FED98B4C28B189FD0045D879 /* StartView */,
-				FED98B4D28B18A0A0045D879 /* ImagesView */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FED98B4C28B189FD0045D879 /* StartView */ = {
-			isa = PBXGroup;
-			children = (
-				FED98B1828B186840045D879 /* StartViewController.swift */,
-			);
-			path = StartView;
-			sourceTree = "<group>";
-		};
-		FED98B4D28B18A0A0045D879 /* ImagesView */ = {
-			isa = PBXGroup;
-			children = (
-				FE2B073328B1C652004DA178 /* ImagesViewController.swift */,
-			);
-			path = ImagesView;
 			sourceTree = "<group>";
 		};
 		FED98B4E28B18A240045D879 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FEC1916B28B799A300D29D72 /* ImagesService.swift */,
+				FE03CBB728B8147800703B4E /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,12 +410,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE03CBB328B7E3CA00703B4E /* ViewCodeConfiguration.swift in Sources */,
+				FEC1916828B5481500D29D72 /* AsyncImage.swift in Sources */,
+				FEC1916C28B799A300D29D72 /* ImagesService.swift in Sources */,
 				FE2B073428B1C652004DA178 /* ImagesViewController.swift in Sources */,
+				FEC1916228B50D9900D29D72 /* WeatherCollectionViewCell.swift in Sources */,
 				FED98B1928B186840045D879 /* StartViewController.swift in Sources */,
-				FE2B073128B1C1B5004DA178 /* Sizes.swift in Sources */,
+				FE03CBB828B8147800703B4E /* WeatherService.swift in Sources */,
+				FEC1916A28B6525000D29D72 /* WeatherModel.swift in Sources */,
+				FE03CBAC28B7A2C000703B4E /* ImagesTableViewCell.swift in Sources */,
+				FE03CBAE28B7B07700703B4E /* CellTypeModel.swift in Sources */,
+				FEC1916E28B79D9900D29D72 /* RoverImagesModel.swift in Sources */,
 				FED98B1528B186840045D879 /* AppDelegate.swift in Sources */,
 				FED98B1728B186840045D879 /* SceneDelegate.swift in Sources */,
-				FE2B072C28B19D7C004DA178 /* ViewBackgroundColor.swift in Sources */,
+				FEC1915C28B5051E00D29D72 /* WeatherTableViewCell.swift in Sources */,
+				FE2B072C28B19D7C004DA178 /* CustomColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
