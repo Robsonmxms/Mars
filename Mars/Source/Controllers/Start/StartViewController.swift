@@ -8,31 +8,24 @@
 import UIKit
 
 class StartViewController: UIViewController {
-    
     private lazy var logoImageView: UIImageView = {
         return UIImageView(frame: .zero)
     }()
-    
     private lazy var startButton: UIButton = {
         return UIButton(frame: .zero)
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.viewBackgroundColor
         applyViewCode()
-        
     }
-    
 }
 
-extension StartViewController: ViewCodeConfiguration{
+extension StartViewController: ViewCodeConfiguration {
     func buildHierarchy() {
         view.addSubview(logoImageView)
         view.addSubview(startButton)
     }
-    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(
@@ -42,7 +35,6 @@ extension StartViewController: ViewCodeConfiguration{
                 equalTo: view.widthAnchor,
                 multiplier: 0.9
             ),
-            
             startButton.centerXAnchor.constraint(
                 equalTo: view.centerXAnchor
             ),
@@ -58,14 +50,12 @@ extension StartViewController: ViewCodeConfiguration{
                 equalTo: view.widthAnchor,
                 multiplier: 0.7
             )
-            
         ])
     }
-    
     func configureViews() {
         logoImageView.image = UIImage(named: "Logo.png")
+        logoImageView.contentMode = .scaleAspectFit
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         startButton.setTitle("Start", for: .normal)
         startButton.setTitleColor(.black, for: .normal)
         startButton.titleLabel?.font = UIFont.systemFont(
@@ -81,17 +71,10 @@ extension StartViewController: ViewCodeConfiguration{
         )
         startButton.translatesAutoresizingMaskIntoConstraints = false
     }
-    
     @objc private func onTapStartButton() {
-        
         let rootVC = ExploreViewController()
-        
         let navVC = UINavigationController(rootViewController: rootVC)
-        
         navVC.modalPresentationStyle = .fullScreen
-        
         present(navVC, animated: true)
     }
-    
-    
 }

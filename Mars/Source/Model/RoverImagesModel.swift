@@ -12,17 +12,13 @@ struct RoverImagesModel: Codable {
 
 // MARK: - Photo
 struct Photo: Codable {
-    let id, sol: Int
+    let id: Int
     let camera: Camera
     let imgSrc: String
-    let earthDate: String
-    let rover: Rover
 
     enum CodingKeys: String, CodingKey {
-        case id, sol, camera
+        case id, camera
         case imgSrc = "img_src"
-        case earthDate = "earth_date"
-        case rover
     }
 }
 
@@ -30,30 +26,15 @@ struct Photo: Codable {
 struct Camera: Codable {
     let id: Int
     let name: String
-    let roverID: Int
     let fullName: String
 
     enum CodingKeys: String, CodingKey {
         case id, name
-        case roverID = "rover_id"
         case fullName = "full_name"
     }
 }
 
-// MARK: - Rover
-struct Rover: Codable {
-    let id: Int
-    let name, landingDate, launchDate, status: String
-
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case landingDate = "landing_date"
-        case launchDate = "launch_date"
-        case status
-    }
-}
-
-enum CameraFullName: String, Codable {
+enum CameraFullName: String, CaseIterable, Codable {
     case chemistryAndCameraComplex = "Chemistry and Camera Complex"
     case frontHazardAvoidanceCamera = "Front Hazard Avoidance Camera"
     case mastCamera = "Mast Camera"
@@ -67,4 +48,20 @@ enum CameraName: String, Codable {
     case mast = "MAST"
     case navcam = "NAVCAM"
     case rhaz = "RHAZ"
+}
+
+struct CameraModel {
+    static var cameraWasChanged = true
+    static var camera: CameraName = .chemcam
+    static func getAllPhotos() async -> [Photo] {
+        let service = ImagesService()
+        var model: RoverImagesModel?
+        do {
+            try await model = service.getImagesFromCamera(.navcam)
+            cameraWasChanged = false
+        } catch {
+            print(error)
+        }
+        return model?.photos ?? []
+    }
 }

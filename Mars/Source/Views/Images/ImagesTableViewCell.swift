@@ -8,9 +8,7 @@
 import UIKit
 
 class ImagesTableViewCell: UITableViewCell {
-    
     let placeHolder = UIImage(named: "ImageError")
-    
     private lazy var photoFromAPIView: UIImageView = {
         return UIImageView()
     }()
@@ -21,23 +19,21 @@ class ImagesTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
         applyViewCode()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
 }
 
-extension ImagesTableViewCell: ViewCodeConfiguration{
+extension ImagesTableViewCell: ViewCodeConfiguration {
     func buildHierarchy() {
         self.contentView.addSubview(photoFromAPIView)
     }
-    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             photoFromAPIView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: UIScreen.main.bounds.height*0.04
+                constant: contentView.bounds.height*0.2
             ),
             photoFromAPIView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor
@@ -51,28 +47,21 @@ extension ImagesTableViewCell: ViewCodeConfiguration{
             photoFromAPIView.widthAnchor.constraint(
                 equalTo: contentView.widthAnchor,
                 multiplier: 0.9
-            ),
-            
+            )
         ])
     }
-    
     func configureViews() {
         photoFromAPIView.contentMode = .scaleAspectFit
         photoFromAPIView.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
         photoFromAPIView.layer.borderWidth = 5
         photoFromAPIView.layer.cornerRadius = 10
         photoFromAPIView.translatesAutoresizingMaskIntoConstraints = false
-        
     }
-    
-    func configure(with model: Photo){
-        let url = model.imgSrc
-
+    func configure(with model: Photo) {
+        let getUrl = model.imgSrc
         photoFromAPIView.imageFromServerURL(
-            url,
-            placeHolder: placeHolder)
-        
+            getUrl,
+            placeHolder: placeHolder
+        )
     }
-    
-    
 }

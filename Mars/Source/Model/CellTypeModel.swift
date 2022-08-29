@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-enum CellType {
+enum CellType: CaseIterable {
     case weather
+//    case dropDown
+    case picker
     case image
 }
