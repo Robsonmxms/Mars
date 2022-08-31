@@ -33,7 +33,7 @@ extension ImagesTableViewCell: ViewCodeConfiguration {
         NSLayoutConstraint.activate([
             photoFromAPIView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: contentView.bounds.height*0.2
+                constant: contentView.bounds.height*0.3
             ),
             photoFromAPIView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor
@@ -51,10 +51,9 @@ extension ImagesTableViewCell: ViewCodeConfiguration {
         ])
     }
     func configureViews() {
-        photoFromAPIView.contentMode = .scaleAspectFit
-        photoFromAPIView.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
-        photoFromAPIView.layer.borderWidth = 5
-        photoFromAPIView.layer.cornerRadius = 10
+        photoFromAPIView.contentMode = .scaleAspectFill
+        photoFromAPIView.clipsToBounds = true
+        photoFromAPIView.layer.cornerRadius = 25
         photoFromAPIView.translatesAutoresizingMaskIntoConstraints = false
     }
     func configure(with model: Photo) {

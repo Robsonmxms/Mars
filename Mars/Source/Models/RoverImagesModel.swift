@@ -34,7 +34,7 @@ struct Camera: Codable {
     }
 }
 
-enum CameraFullName: String, CaseIterable, Codable {
+enum CameraFullName: String, CaseIterable, Codable, Hashable {
     case chemistryAndCameraComplex = "Chemistry and Camera Complex"
     case frontHazardAvoidanceCamera = "Front Hazard Avoidance Camera"
     case mastCamera = "Mast Camera"
@@ -53,11 +53,11 @@ enum CameraName: String, Codable {
 struct CameraModel {
     static var cameraWasChanged = true
     static var camera: CameraName = .chemcam
-    static func getAllPhotos() async -> [Photo] {
+    static func getAllPhotos(_ camera: CameraName) async -> [Photo] {
         let service = ImagesService()
         var model: RoverImagesModel?
         do {
-            try await model = service.getImagesFromCamera(.navcam)
+            try await model = service.getImagesFromCamera(camera)
             cameraWasChanged = false
         } catch {
             print(error)

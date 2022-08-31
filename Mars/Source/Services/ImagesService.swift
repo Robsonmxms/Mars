@@ -21,7 +21,7 @@ struct ImagesService {
         urlToRequisition.append(contentsOf: camera.rawValue)
         let getUrl = URL(string: urlToRequisition)
         do {
-            let (data, _) = try await URLSession.shared.data(from: getUrl!)
+            let (data, response) = try await URLSession.shared.data(from: getUrl!)
             let jsonDecode = try JSONDecoder().decode(RoverImagesModel.self, from: data)
             return jsonDecode
         } catch {

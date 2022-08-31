@@ -39,8 +39,8 @@ extension StartViewController: ViewCodeConfiguration {
                 equalTo: view.centerXAnchor
             ),
             startButton.topAnchor.constraint(
-                equalTo: view.topAnchor,
-                constant: view.bounds.height*0.65
+                equalTo: logoImageView.bottomAnchor,
+                constant: view.bounds.height*0.2
             ),
             startButton.heightAnchor.constraint(
                 equalTo: view.heightAnchor,

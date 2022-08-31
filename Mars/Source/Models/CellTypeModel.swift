@@ -10,7 +10,7 @@ import UIKit
 
 enum CellType: CaseIterable {
     case weather
-//    case dropDown
-    case picker
+    case dropDown
+//    case picker
     case image
 }

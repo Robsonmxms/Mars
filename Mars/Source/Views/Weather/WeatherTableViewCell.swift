@@ -50,20 +50,15 @@ extension WeatherTableViewCell: ViewCodeConfiguration {
         self.contentView.addSubview(footerLabel)
     }
     func setupConstraints() {
-        print(UIScreen.main.bounds.height)
         NSLayoutConstraint.activate([
-
             marsImageView.topAnchor.constraint(
                 equalTo: contentView.topAnchor
             ),
             marsImageView.heightAnchor.constraint(
-                equalToConstant: UIScreen.main.bounds.height*0.36
+                equalToConstant: UIScreen.main.bounds.height*0.4
             ),
             marsImageView.widthAnchor.constraint(
                 equalTo: contentView.widthAnchor
-            ),
-            marsImageView.bottomAnchor.constraint(
-                equalTo: contentView.bottomAnchor
             ),
             headerLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
@@ -75,11 +70,11 @@ extension WeatherTableViewCell: ViewCodeConfiguration {
             ),
             collectionView.topAnchor.constraint(
                 equalTo: headerLabel.bottomAnchor,
-                constant: UIScreen.main.bounds.height*0.015
+                constant: headerLabel.bounds.height*0.01
             ),
             collectionView.heightAnchor.constraint(
-                equalTo: marsImageView.heightAnchor,
-                multiplier: 0.5
+                equalTo: contentView.heightAnchor,
+                multiplier: 0.6
             ),
             collectionView.widthAnchor.constraint(
                 equalTo: marsImageView.widthAnchor
@@ -89,29 +84,27 @@ extension WeatherTableViewCell: ViewCodeConfiguration {
                 constant: UIScreen.main.bounds.width*0.025
             ),
             footerLabel.topAnchor.constraint(
-                equalTo: headerLabel.topAnchor,
-                constant: UIScreen.main.bounds.height*0.24
+                equalTo: collectionView.bottomAnchor,
+                constant: collectionView.bounds.height*0.1
             ),
             footerLabel.leadingAnchor.constraint(
                 equalTo: headerLabel.leadingAnchor
             )
         ])
+        let bottomContraint = marsImageView.bottomAnchor.constraint(
+            equalTo: contentView.bottomAnchor
+        )
+        bottomContraint.priority = .defaultLow
+        bottomContraint.isActive = true
     }
     func configureViews() {
         marsImageView.image = UIImage(named: "Mars.jpg")
+        marsImageView.contentMode = .scaleAspectFill
         marsImageView.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.text = "Weather"
         headerLabel.textColor = .white
         headerLabel.font = UIFont.systemFont(ofSize: 28, weight: .semibold)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.scrollDirection = .horizontal
-        collectionViewLayout.estimatedItemSize = CGSize(
-            width: 120,
-            height: 140
-        )
-        collectionView.frame = .zero
-        collectionView.collectionViewLayout = collectionViewLayout
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -121,26 +114,23 @@ extension WeatherTableViewCell: ViewCodeConfiguration {
         footerLabel.textColor = .white
         footerLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         footerLabel.translatesAutoresizingMaskIntoConstraints = false
-
     }
 }
 
 extension WeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return soles.count
     }
-
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let model = soles[indexPath.item]
-         guard let cell = collectionView
-        .dequeueReusableCell(
-            withReuseIdentifier: "cell",
-            for: indexPath
-        ) as? WeatherCollectionViewCell else {
+        guard let cell = collectionView
+            .dequeueReusableCell(
+                withReuseIdentifier: "cell",
+                for: indexPath
+            ) as? WeatherCollectionViewCell else {
             fatalError("DequeueReusableCell failed while casting")
         }
         cell.configure(with: model)
@@ -156,5 +146,4 @@ extension WeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         }
         return model?.soles ?? []
     }
-
 }

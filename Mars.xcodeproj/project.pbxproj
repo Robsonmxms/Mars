@@ -257,7 +257,7 @@
 		FED98B4428B188A00045D879 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FED98B4828B189720045D879 /* Model */,
+				FED98B4828B189720045D879 /* Models */,
 				FEC1915F28B50A6600D29D72 /* Views */,
 				FE03CBB428B7E50A00703B4E /* Controllers */,
 				FED98B4E28B18A240045D879 /* Services */,
@@ -285,7 +285,7 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FED98B4828B189720045D879 /* Model */ = {
+		FED98B4828B189720045D879 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				FEC1916928B6525000D29D72 /* WeatherModel.swift */,
@@ -293,7 +293,7 @@
 				FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */,
 				FE586F7428B95EA900134A18 /* FormatterModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FED98B4E28B18A240045D879 /* Services */ = {
