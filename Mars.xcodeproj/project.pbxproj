@@ -24,7 +24,6 @@
 		FEC1916E28B79D9900D29D72 /* RoverImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC1916D28B79D9900D29D72 /* RoverImagesModel.swift */; };
 		FED98B1528B186840045D879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1428B186840045D879 /* AppDelegate.swift */; };
 		FED98B1728B186840045D879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1628B186840045D879 /* SceneDelegate.swift */; };
-		FED98B1928B186840045D879 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B1828B186840045D879 /* StartViewController.swift */; };
 		FED98B1E28B186890045D879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FED98B1D28B186890045D879 /* Assets.xcassets */; };
 		FED98B2128B186890045D879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED98B1F28B186890045D879 /* LaunchScreen.storyboard */; };
 		FED98B2C28B186890045D879 /* MarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED98B2B28B186890045D879 /* MarsTests.swift */; };
@@ -68,7 +67,6 @@
 		FED98B1128B186840045D879 /* Mars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED98B1428B186840045D879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FED98B1628B186840045D879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FED98B1828B186840045D879 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FED98B1D28B186890045D879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FED98B2028B186890045D879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FED98B2228B186890045D879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,26 +121,9 @@
 		FE03CBB428B7E50A00703B4E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE03CBB528B7E52400703B4E /* Start */,
-				FE03CBB628B7E53F00703B4E /* Explore */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FE03CBB528B7E52400703B4E /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				FED98B1828B186840045D879 /* StartViewController.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
-		FE03CBB628B7E53F00703B4E /* Explore */ = {
-			isa = PBXGroup;
-			children = (
 				FE2B073328B1C652004DA178 /* ExploreViewController.swift */,
 			);
-			path = Explore;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FE03CBB928B8517200703B4E /* Picker */ = {
@@ -463,7 +444,6 @@
 				FE2B073428B1C652004DA178 /* ExploreViewController.swift in Sources */,
 				FEC1916228B50D9900D29D72 /* WeatherCollectionViewCell.swift in Sources */,
 				FE03CBBB28B851D200703B4E /* PickerTableViewCell.swift in Sources */,
-				FED98B1928B186840045D879 /* StartViewController.swift in Sources */,
 				FE03CBB828B8147800703B4E /* WeatherService.swift in Sources */,
 				FEC1916A28B6525000D29D72 /* WeatherModel.swift in Sources */,
 				FE586F7528B95EA900134A18 /* FormatterModel.swift in Sources */,

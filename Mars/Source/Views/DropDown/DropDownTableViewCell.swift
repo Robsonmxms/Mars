@@ -13,16 +13,21 @@ enum ListItem: Hashable {
 }
 
 class DropDownTableViewCell: UITableViewCell {
+
+    var dropDownConstraint: NSLayoutConstraint!
+
     let groupedNumbers = [
-        (title: "ONE", numbers: Array(01...10))
+        (title: "SECTION ONE", numbers: Array(01...10))
     ]
+
     lazy var dataSource: UICollectionViewDiffableDataSource<String, ListItem> = {
+
         let cellRegistration = UICollectionView
             .CellRegistration<UICollectionViewListCell, ListItem> { (cell, _ , item) in
                 switch item {
                 case .header(let group):
-                    var content = UIListContentConfiguration.plainHeader()
-                    content.text = "SECTION \(group)"
+                        var content = UIListContentConfiguration.prominentInsetGroupedHeader()
+                    content.text = group
                     cell.accessories = [.outlineDisclosure()]
                     cell.contentConfiguration = content
                 case .myRow(let number):
@@ -32,6 +37,7 @@ class DropDownTableViewCell: UITableViewCell {
                     cell.contentConfiguration = content
                 }
         }
+
         let cellProvider: UICollectionViewDiffableDataSource<String, ListItem>
             .CellProvider = { collectionView, indexPath, item in
                 let cell = collectionView.dequeueConfiguredReusableCell(
@@ -41,64 +47,103 @@ class DropDownTableViewCell: UITableViewCell {
                 )
                 return cell
         }
-        return UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: cellProvider)
+
+        let dataSource = UICollectionViewDiffableDataSource<String, ListItem>(
+            collectionView: collection,
+            cellProvider: cellProvider
+        )
+
+        dataSource.sectionSnapshotHandlers.willExpandItem = { [weak self] _ in
+            self?.toggleSection()
+        }
+
+        dataSource.sectionSnapshotHandlers.willCollapseItem = { [weak self] _ in
+            self?.toggleSection()
+        }
+
+        return dataSource
     }()
-    private lazy var collectionView: UICollectionView = {
-        var layoutConfiguration = UICollectionLayoutListConfiguration(appearance: UICollectionLayoutListConfiguration.Appearance.grouped)
-        layoutConfiguration.headerMode = .firstItemInSection
+
+    func toggleSection() {
+        self.dropDownConstraint.constant = dropDownConstraint.constant == 210 ? 50 : 210
+        (self.superview as? UITableView)?.reloadRows(
+            at: [IndexPath(row: 1, section: 0)],
+            with: .automatic
+        )
+    }
+
+    private lazy var collection: UICollectionView = {
+        var layoutConfiguration = UICollectionLayoutListConfiguration(
+            appearance: UICollectionLayoutListConfiguration.Appearance.grouped
+        )
+        layoutConfiguration.backgroundColor = .green
+        layoutConfiguration.headerMode = UICollectionLayoutListConfiguration.HeaderMode.firstItemInSection
         let layout = UICollectionViewCompositionalLayout.list(using: layoutConfiguration)
-        return UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.delegate = self
+        return collection
     }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.backgroundColor = .clear
         applyViewCode()
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
+extension DropDownTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let diff = collection.dataSource as? UICollectionViewDiffableDataSource<String, ListItem> else {
+            return
+        }
+        let groupedNumber = groupedNumbers[indexPath.section]
+        var snapshot = diff.snapshot(for: groupedNumber.title)
+        snapshot.collapse(snapshot.items)
+        diff.apply(snapshot, to: groupedNumber.title)
+        toggleSection()
+    }
+}
+
 extension DropDownTableViewCell: ViewCodeConfiguration {
     func buildHierarchy() {
-        self.contentView.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(collection)
+        collection.translatesAutoresizingMaskIntoConstraints = false
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(
+            collection.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
                 constant: UIScreen.main.bounds.height*0.02
             ),
-            collectionView.bottomAnchor.constraint(
+            collection.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor
             ),
-            collectionView.widthAnchor.constraint(
-                equalTo: contentView.widthAnchor,
-                multiplier: 0.9
-            ),
-            collectionView.centerXAnchor.constraint(
-                equalTo: contentView.centerXAnchor
-            )
+            collection.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            collection.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
 
         let heightConstraint = NSLayoutConstraint(
-            item: collectionView,
+            item: collection,
             attribute: .height,
             relatedBy: .equal,
             toItem: .none,
             attribute: .notAnAttribute,
             multiplier: 0,
-            constant: 200
+            constant: 50
         )
         heightConstraint.priority = .defaultLow
         heightConstraint.isActive = true
+        self.dropDownConstraint = heightConstraint
     }
     func configureViews() {
-        collectionView.dataSource = dataSource
-        collectionView.clipsToBounds = true
-        collectionView.layer.cornerRadius = 10
+        collection.dataSource = dataSource
+        collection.clipsToBounds = true
+        collection.layer.cornerRadius = 10
         groupedNumbers.forEach { (group, numbers) in
             let header = ListItem.header(group)
             let rows = numbers.map({ ListItem.myRow($0) })
@@ -107,6 +152,5 @@ extension DropDownTableViewCell: ViewCodeConfiguration {
             snapshot.append(rows, to: header)
             dataSource.apply(snapshot, to: group)
         }
-        collectionView.backgroundColor = .green
     }
 }

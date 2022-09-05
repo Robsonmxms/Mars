@@ -37,6 +37,7 @@ class WeatherTableViewCell: UITableViewCell {
         }
         applyViewCode()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -91,11 +92,13 @@ extension WeatherTableViewCell: ViewCodeConfiguration {
                 equalTo: headerLabel.leadingAnchor
             )
         ])
-        let bottomContraint = marsImageView.bottomAnchor.constraint(
+
+        let bottomConstraint = marsImageView.bottomAnchor.constraint(
             equalTo: contentView.bottomAnchor
         )
-        bottomContraint.priority = .defaultLow
-        bottomContraint.isActive = true
+        bottomConstraint.priority = .defaultLow
+        bottomConstraint.isActive = true
+
     }
     func configureViews() {
         marsImageView.image = UIImage(named: "Mars.jpg")
