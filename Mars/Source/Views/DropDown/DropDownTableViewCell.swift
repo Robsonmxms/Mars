@@ -9,15 +9,17 @@ import UIKit
 
 enum ListItem: Hashable {
     case header(String)
-    case myRow(Int)
+    case myRow(String)
 }
 
 class DropDownTableViewCell: UITableViewCell {
 
+    weak var delegate: DropDownCellDelegate!
+
     var dropDownConstraint: NSLayoutConstraint!
 
-    let groupedNumbers = [
-        (title: "SECTION ONE", numbers: Array(01...10))
+    var groupedCameras = [
+        (title: "Select a Camera", cameras: CameraFullName.allCases)
     ]
 
     lazy var dataSource: UICollectionViewDiffableDataSource<String, ListItem> = {
@@ -28,11 +30,12 @@ class DropDownTableViewCell: UITableViewCell {
                 case .header(let group):
                         var content = UIListContentConfiguration.prominentInsetGroupedHeader()
                     content.text = group
+                    content.textProperties.color = .white
                     cell.accessories = [.outlineDisclosure()]
                     cell.contentConfiguration = content
                 case .myRow(let number):
                     var content = UIListContentConfiguration.cell()
-                    content.text = number.formatted()
+                    content.text = number
                     cell.accessories = []
                     cell.contentConfiguration = content
                 }
@@ -65,7 +68,7 @@ class DropDownTableViewCell: UITableViewCell {
     }()
 
     func toggleSection() {
-        self.dropDownConstraint.constant = dropDownConstraint.constant == 210 ? 50 : 210
+        self.dropDownConstraint.constant = dropDownConstraint.constant == 300 ? 50 : 300
         (self.superview as? UITableView)?.reloadRows(
             at: [IndexPath(row: 1, section: 0)],
             with: .automatic
@@ -74,9 +77,9 @@ class DropDownTableViewCell: UITableViewCell {
 
     private lazy var collection: UICollectionView = {
         var layoutConfiguration = UICollectionLayoutListConfiguration(
-            appearance: UICollectionLayoutListConfiguration.Appearance.grouped
+            appearance: UICollectionLayoutListConfiguration.Appearance.insetGrouped
         )
-        layoutConfiguration.backgroundColor = .green
+        layoutConfiguration.backgroundColor = .darkGray
         layoutConfiguration.headerMode = UICollectionLayoutListConfiguration.HeaderMode.firstItemInSection
         let layout = UICollectionViewCompositionalLayout.list(using: layoutConfiguration)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -97,22 +100,33 @@ class DropDownTableViewCell: UITableViewCell {
 }
 
 extension DropDownTableViewCell: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let diff = collection.dataSource as? UICollectionViewDiffableDataSource<String, ListItem> else {
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        guard let diff = collection.dataSource as?
+                UICollectionViewDiffableDataSource<String, ListItem> else {
             return
         }
-        let groupedNumber = groupedNumbers[indexPath.section]
-        var snapshot = diff.snapshot(for: groupedNumber.title)
+        let groupedCameras = groupedCameras[indexPath.section]
+        var snapshot = diff.snapshot(for: groupedCameras.title)
         snapshot.collapse(snapshot.items)
-        diff.apply(snapshot, to: groupedNumber.title)
-        toggleSection()
+        Task {
+            await diff.apply(snapshot, to: groupedCameras.title)
+            toggleSection()
+            let selectedItem = groupedCameras.cameras[indexPath.item-1]
+            let cameraName = CameraModel.cameraDict[selectedItem]
+            await delegate?.loadImages(cameraName!)
+        }
+
     }
+
 }
 
 extension DropDownTableViewCell: ViewCodeConfiguration {
     func buildHierarchy() {
         self.contentView.addSubview(collection)
-        collection.translatesAutoresizingMaskIntoConstraints = false
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -144,9 +158,10 @@ extension DropDownTableViewCell: ViewCodeConfiguration {
         collection.dataSource = dataSource
         collection.clipsToBounds = true
         collection.layer.cornerRadius = 10
-        groupedNumbers.forEach { (group, numbers) in
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        groupedCameras.forEach { (group, cameras) in
             let header = ListItem.header(group)
-            let rows = numbers.map({ ListItem.myRow($0) })
+            let rows = cameras.map({ ListItem.myRow($0.rawValue) })
             var snapshot = NSDiffableDataSourceSectionSnapshot<ListItem>()
             snapshot.append([header])
             snapshot.append(rows, to: header)
