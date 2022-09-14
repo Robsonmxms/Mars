@@ -13,11 +13,8 @@ class ExploreViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.viewBackgroundColor
         applyViewCode()
-        if CameraModel.cameraWasChanged {
-            Task {
-                self.photos = await CameraModel.getAllPhotos(.chemcam)
-                tableView.reloadData()
-            }
+        Task {
+            await loadImages(.mast)
         }
     }
 }
@@ -47,12 +44,12 @@ extension ExploreViewController: ViewCodeConfiguration {
         tableView.dataSource = self
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "weatherCell")
         tableView.register(DropDownTableViewCell.self, forCellReuseIdentifier: "dropDownCell")
-//        tableView.register(PickerTableViewCell.self, forCellReuseIdentifier: "pickerCell")
         tableView.register(ImagesTableViewCell.self, forCellReuseIdentifier: "imagesCell")
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.backgroundColor = UIColor.viewBackgroundColor
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
+
 }
 
 extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
@@ -82,13 +79,9 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
                     as? DropDownTableViewCell else {
                 fatalError("DequeueReusableCell failed while casting")
             }
+            cell.delegate = self
             return cell
-//        case .picker:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "pickerCell")
-//                    as? PickerTableViewCell else {
-//                fatalError("DequeueReusableCell failed while casting")
-//            }
-//            return cell
+
         case .image:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "imagesCell")
                     as? ImagesTableViewCell else {
@@ -99,4 +92,17 @@ extension ExploreViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+}
+
+extension ExploreViewController: DropDownCellDelegate {
+
+    func loadImages(_ camera: CameraName) async {
+        self.photos = await CameraModel.getAllPhotos(camera)
+        tableView.reloadData()
+    }
+
+}
+
+protocol DropDownCellDelegate: AnyObject {
+    func loadImages(_ camera: CameraName) async
 }

@@ -11,7 +11,6 @@
 		FE03CBAE28B7B07700703B4E /* CellTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */; };
 		FE03CBB328B7E3CA00703B4E /* ViewCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBB228B7E3CA00703B4E /* ViewCodeConfiguration.swift */; };
 		FE03CBB828B8147800703B4E /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBB728B8147800703B4E /* WeatherService.swift */; };
-		FE03CBBB28B851D200703B4E /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBBA28B851D200703B4E /* PickerTableViewCell.swift */; };
 		FE03CBBE28B8FABC00703B4E /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE03CBBD28B8FABC00703B4E /* DropDownTableViewCell.swift */; };
 		FE2B072C28B19D7C004DA178 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B072B28B19D7C004DA178 /* CustomColors.swift */; };
 		FE2B073428B1C652004DA178 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2B073328B1C652004DA178 /* ExploreViewController.swift */; };
@@ -53,7 +52,6 @@
 		FE03CBAD28B7B07700703B4E /* CellTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeModel.swift; sourceTree = "<group>"; };
 		FE03CBB228B7E3CA00703B4E /* ViewCodeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeConfiguration.swift; sourceTree = "<group>"; };
 		FE03CBB728B8147800703B4E /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		FE03CBBA28B851D200703B4E /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
 		FE03CBBD28B8FABC00703B4E /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		FE2B072B28B19D7C004DA178 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		FE2B073328B1C652004DA178 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
@@ -126,14 +124,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		FE03CBB928B8517200703B4E /* Picker */ = {
-			isa = PBXGroup;
-			children = (
-				FE03CBBA28B851D200703B4E /* PickerTableViewCell.swift */,
-			);
-			path = Picker;
-			sourceTree = "<group>";
-		};
 		FE03CBBC28B8FAA100703B4E /* DropDown */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +154,6 @@
 			children = (
 				FE03CBBC28B8FAA100703B4E /* DropDown */,
 				FEC1916528B510E000D29D72 /* Weather */,
-				FE03CBB928B8517200703B4E /* Picker */,
 				FE03CBAA28B7A24B00703B4E /* Images */,
 			);
 			path = Views;
@@ -428,7 +417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -443,7 +432,6 @@
 				FEC1916C28B799A300D29D72 /* ImagesService.swift in Sources */,
 				FE2B073428B1C652004DA178 /* ExploreViewController.swift in Sources */,
 				FEC1916228B50D9900D29D72 /* WeatherCollectionViewCell.swift in Sources */,
-				FE03CBBB28B851D200703B4E /* PickerTableViewCell.swift in Sources */,
 				FE03CBB828B8147800703B4E /* WeatherService.swift in Sources */,
 				FEC1916A28B6525000D29D72 /* WeatherModel.swift in Sources */,
 				FE586F7528B95EA900134A18 /* FormatterModel.swift in Sources */,

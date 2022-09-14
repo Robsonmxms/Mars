@@ -50,9 +50,17 @@ enum CameraName: String, Codable {
     case rhaz = "RHAZ"
 }
 
-struct CameraModel {
+class CameraModel {
     static var cameraWasChanged = true
     static var camera: CameraName = .chemcam
+    static let cameraDict: [CameraFullName: CameraName] = [
+        .chemistryAndCameraComplex: .chemcam,
+        .frontHazardAvoidanceCamera: .fhaz,
+        .mastCamera: .mast,
+        .navigationCamera: .navcam,
+        .rearHazardAvoidanceCamera: .rhaz
+    ]
+    init() { }
     static func getAllPhotos(_ camera: CameraName) async -> [Photo] {
         let service = ImagesService()
         var model: RoverImagesModel?
